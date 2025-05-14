@@ -21,7 +21,7 @@ Developed by: AMAN SINGH
 RegisterNumber:  212224040020
 */
 ```
-```
+```python
 import numpy as np
 import pandas as pd
 from sklearn.datasets import fetch_california_housing
@@ -40,7 +40,7 @@ print(df.head())
 
 ```
 
-```
+```python
 # Use the first 3 features as inputs
 X = df.drop(columns=['AveOccup', 'HousingPrice'])#data[:, :3] # Features: 'MedInc', 'HouseAge', 'AveRooms '
 # Use 'MedHouseVal' and 'AveOccup' as output variables
@@ -58,7 +58,7 @@ Y_train = scaler_Y.fit_transform(Y_train)
 #no tranformation required since it is only used for verification
 #Y_test = scaler_Y.transform(Y_test)
 ```
-```
+```python
 # Initialize the SGDRegressor
 sgd = SGDRegressor(max_iter=1000, tol=1e-3)
 # Use MultiOutputRegressor to handle multiple output variables
@@ -68,7 +68,7 @@ multi_output_sgd.fit(X_train, Y_train)
 # Predict on the test data
 ```
 
-```
+```python
 
 Y_pred = multi_output_sgd.predict(X_test)
 
